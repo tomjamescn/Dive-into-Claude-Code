@@ -7,7 +7,7 @@
 <p align="center">
   <a href="https://arxiv.org/abs/XXXX.XXXXX"><img src="https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b.svg" alt="arXiv"></a>
   <a href="./LICENSE"><img src="https://img.shields.io/badge/License-CC--BY--NC--SA--4.0-lightgrey.svg" alt="License"></a>
-  <a href="https://github.com/XXX/Dive-into-ClaudeCode/stargazers"><img src="https://img.shields.io/github/stars/XXX/Dive-into-ClaudeCode?style=social" alt="Stars"></a>
+  <a href="https://github.com/VILA-Lab/Dive-into-ClaudeCode/stargazers"><img src="https://img.shields.io/github/stars/VILA-Lab/Dive-into-ClaudeCode?style=social" alt="Stars"></a>
 </p>
 
 > **A source-level architectural analysis of Claude Code (v2.1.88, ~1,900 TypeScript files, ~512K lines of code), revealing the design patterns, engineering trade-offs, and system-level decisions that power one of the most capable AI coding agents in production.**
@@ -220,6 +220,10 @@ The `yoloClassifier.ts` implements a two-stage ML-based safety evaluation using 
 ---
 
 ## Extensibility: MCP, Plugins, Skills, and Hooks
+
+<p align="center">
+  <img src="./assets/extensibility.png" width="85%" alt="Extension mechanisms plug into the agent loop via three injection points: assemble(), model(), and execute()">
+</p>
 
 Claude Code provides **four extension mechanisms**, deliberately ordered by context cost:
 
