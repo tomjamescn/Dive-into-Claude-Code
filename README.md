@@ -371,8 +371,8 @@ Tutorials and hands-on learning paths.
 
 ## Citation
 
-<details>
-<summary>BibTeX</summary>
+<!-- <details>
+<summary>BibTeX</summary> -->
 
 ```bibtex
 @article{diveclaudecode2026,
