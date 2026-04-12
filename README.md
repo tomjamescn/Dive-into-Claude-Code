@@ -86,9 +86,9 @@ The system decomposes into **7 components** (User → Interfaces → Agent Loop 
 > [!NOTE]
 > For the full architectural deep dive -- 7 safety layers, 9-step turn pipeline, 5-layer compaction, and more -- see **[docs/architecture.md](./docs/architecture.md)**.
 
-</details>
-
 <p align="right"><a href="#dive-into-claude-code-the-design-space-of-todays-ai-agent-system">↑ Back to top</a></p>
+
+</details>
 
 ---
 
@@ -128,9 +128,9 @@ The architecture traces from **5 human values** through **13 design principles**
 
 The paper also applies a **sixth evaluative lens** -- long-term capability preservation -- citing evidence that developers who fully delegate to AI score 17% lower on comprehension tests.
 
-</details>
-
 <p align="right"><a href="#dive-into-claude-code-the-design-space-of-todays-ai-agent-system">↑ Back to top</a></p>
+
+</details>
 
 ---
 
@@ -155,9 +155,9 @@ The core is a **ReAct-pattern while-loop**: assemble context → call model → 
 
 **5 stop conditions:** No tool use, max turns, context overflow, hook intervention, explicit abort
 
-</details>
-
 <p align="right"><a href="#dive-into-claude-code-the-design-space-of-todays-ai-agent-system">↑ Back to top</a></p>
+
+</details>
 
 ---
 
@@ -186,9 +186,9 @@ The core is a **ReAct-pattern while-loop**: assemble context → call model → 
 
 </details>
 
-</details>
-
 <p align="right"><a href="#dive-into-claude-code-the-design-space-of-todays-ai-agent-system">↑ Back to top</a></p>
+
+</details>
 
 ---
 
@@ -209,9 +209,9 @@ The core is a **ReAct-pattern while-loop**: assemble context → call model → 
 
 **Skills:** SKILL.md with 15+ YAML frontmatter fields. Key difference -- SkillTool injects into current context; AgentTool spawns isolated context.
 
-</details>
-
 <p align="right"><a href="#dive-into-claude-code-the-design-space-of-todays-ai-agent-system">↑ Back to top</a></p>
+
+</details>
 
 ---
 
@@ -230,9 +230,9 @@ The core is a **ReAct-pattern while-loop**: assemble context → call model → 
 
 **Memory retrieval:** LLM-based scan of memory-file headers, selects up to 5 relevant files. No embeddings, no vector similarity.
 
-</details>
-
 <p align="right"><a href="#dive-into-claude-code-the-design-space-of-todays-ai-agent-system">↑ Back to top</a></p>
+
+</details>
 
 ---
 
@@ -251,9 +251,9 @@ The core is a **ReAct-pattern while-loop**: assemble context → call model → 
 
 **Custom agents:** YAML frontmatter supports tools, disallowedTools, model, effort, permissionMode, mcpServers, hooks, maxTurns, skills, memory scope, background flag, isolation mode.
 
-</details>
-
 <p align="right"><a href="#dive-into-claude-code-the-design-space-of-todays-ai-agent-system">↑ Back to top</a></p>
+
+</details>
 
 ---
 
@@ -270,9 +270,9 @@ Three channels: append-only JSONL transcripts, global prompt history, subagent s
 
 **Checkpoints:** File-history checkpoints for `--rewind-files`, stored at `~/.claude/file-history/<sessionId>/`.
 
-</details>
-
 <p align="right"><a href="#dive-into-claude-code-the-design-space-of-todays-ai-agent-system">↑ Back to top</a></p>
+
+</details>
 
 ---
 
