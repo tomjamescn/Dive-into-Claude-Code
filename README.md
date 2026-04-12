@@ -10,13 +10,36 @@
   <a href="https://github.com/VILA-Lab/Dive-into-ClaudeCode/stargazers"><img src="https://img.shields.io/github/stars/VILA-Lab/Dive-into-ClaudeCode?style=social" alt="Stars"></a>
 </p>
 
-> **A source-level architectural analysis of Claude Code (v2.1.88, ~1,900 TypeScript files, ~512K lines of code), combined with a curated collection of community analyses, a design-space guide for agent builders, and cross-system comparisons.**
+> **A comprehensive source-level architectural analysis of Claude Code (v2.1.88, ~1,900 TypeScript files, ~512K lines of code), combined with a curated collection of community analyses, a design-space guide for agent builders, and cross-system comparisons.**
 
 <!-- TODO: Update author list -->
 **Authors:** _To be updated._
 
 > [!TIP]
 > **TL;DR** -- Only 1.6% of Claude Code's codebase is AI decision logic. The other 98.4% is deterministic infrastructure -- permission gates, context management, tool routing, and recovery logic. The agent loop is a simple while-loop; the real engineering complexity lives in the systems around it. This repo dissects that architecture and distills it into actionable design guidance for anyone building AI agent systems.
+
+---
+
+## Table of Contents
+
+**From Our Paper**
+
+- [🌟 Key Highlights](#key-highlights)
+- [📖 Reading Guide](#reading-guide)
+- [🏗️ Architecture at a Glance](#architecture-at-a-glance)
+- [🧭 Values and Design Principles](#values-and-design-principles)
+- [🔄 The Agentic Query Loop](#the-agentic-query-loop)
+- [🛡️ Safety and Permissions](#safety-and-permissions)
+- [🧩 Extensibility](#extensibility)
+- [🧠 Context and Memory](#context-and-memory)
+- [👥 Subagent Delegation](#subagent-delegation)
+- [💾 Session Persistence](#session-persistence)
+
+**Beyond the Paper**
+
+- [🛠️ Build Your Own AI Agent: A Design Guide](#build-your-own-ai-agent-a-design-guide)
+- [🌐 Community Projects & Research](#community-projects--research)
+- [🔖 Citation](#citation)
 
 ---
 
@@ -40,28 +63,6 @@
 | **Researcher** | [Full Paper (arXiv)](https://arxiv.org/abs/XXXX.XXXXX) | [Community Resources](#community-projects--research) |
 
 `1,884 files` ·  `~512K lines` ·  `v2.1.88` ·  `7 safety layers` ·  `5 compaction stages` ·  `54 tools` ·  `27 hook events` ·  `4 extension mechanisms` ·  `7 permission modes`
-
----
-
-<details>
-<summary><b>Table of Contents</b></summary>
-
-**From Our Report**
-- [Architecture at a Glance](#architecture-at-a-glance)
-- [Values and Design Principles](#values-and-design-principles)
-- [The Agentic Query Loop](#the-agentic-query-loop)
-- [Safety and Permissions](#safety-and-permissions)
-- [Extensibility](#extensibility)
-- [Context and Memory](#context-and-memory)
-- [Subagent Delegation](#subagent-delegation)
-- [Session Persistence](#session-persistence)
-
-**Beyond the Paper**
-- [Build Your Own AI Agent: A Design Guide](#build-your-own-ai-agent-a-design-guide)
-- [Community Projects & Research](#community-projects--research)
-- [Citation](#citation)
-
-</details>
 
 ---
 
