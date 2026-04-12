@@ -128,7 +128,8 @@ The paper also applies a **sixth evaluative lens** -- long-term capability prese
 
 ---
 
-## The Agentic Query Loop
+<details>
+<summary><h2>The Agentic Query Loop</h2></summary>
 
 <p align="center">
   <img src="./assets/iteration.png" width="60%" alt="Runtime turn flow">
@@ -137,9 +138,6 @@ The paper also applies a **sixth evaluative lens** -- long-term capability prese
 The core is a **ReAct-pattern while-loop**: assemble context → call model → dispatch tools → check permissions → execute → repeat. Implemented as an `AsyncGenerator` yielding streaming events.
 
 **Before every model call**, five compaction shapers run sequentially (cheapest first): Budget Reduction → Snip → Microcompact → Context Collapse → Auto-Compact.
-
-<details>
-<summary><b>More details: 9-step pipeline, recovery mechanisms, stop conditions</b></summary>
 
 **9-step pipeline per turn:** Settings resolution → State init → Context assembly → 5 pre-model shapers → Model call → Tool dispatch → Permission gate → Tool execution → Stop condition
 
@@ -185,16 +183,14 @@ The core is a **ReAct-pattern while-loop**: assemble context → call model → 
 
 ---
 
-## Extensibility
+<details>
+<summary><h2>Extensibility</h2></summary>
 
 <p align="center">
   <img src="./assets/extensibility.png" width="85%" alt="Three injection points: assemble, model, execute">
 </p>
 
 **Four mechanisms at graduated context costs:** Hooks (zero) → Skills (low) → Plugins (medium) → MCP (high). Three injection points in the agent loop: **assemble()** (what the model sees), **model()** (what it can reach), **execute()** (whether/how actions run).
-
-<details>
-<summary><b>More details: tool pool assembly, hook events, plugin components</b></summary>
 
 **Tool pool assembly** (5-step): Base enumeration (up to 54 tools) → Mode filtering → Deny pre-filtering → MCP integration → Deduplication
 
@@ -233,16 +229,14 @@ The core is a **ReAct-pattern while-loop**: assemble context → call model → 
 
 ---
 
-## Subagent Delegation
+<details>
+<summary><h2>Subagent Delegation</h2></summary>
 
 <p align="center">
   <img src="./assets/subagent.png" width="75%" alt="Subagent architecture">
 </p>
 
 **6 built-in types** (Explore, Plan, General-purpose, Guide, Verification, Statusline) + custom agents via `.claude/agents/*.md`. **Sidechain transcripts**: only summaries return to parent (~7x token cost). Three isolation modes: worktree, remote, in-process. Coordination via POSIX `flock()`.
-
-<details>
-<summary><b>More details: SkillTool vs AgentTool, permission scoping, custom agents</b></summary>
 
 **SkillTool vs AgentTool:** SkillTool injects into current context (cheap). AgentTool spawns isolated context (expensive, but prevents context explosion).
 
@@ -256,16 +250,14 @@ The core is a **ReAct-pattern while-loop**: assemble context → call model → 
 
 ---
 
-## Session Persistence
+<details>
+<summary><h2>Session Persistence</h2></summary>
 
 <p align="center">
   <img src="./assets/session_compact.png" width="75%" alt="Session persistence and context compaction">
 </p>
 
 Three channels: append-only JSONL transcripts, global prompt history, subagent sidechains. **Permissions never restored on resume** -- trust is re-established per session. Design favors **auditability over query power**.
-
-<details>
-<summary><b>More details: compact boundary chain patching, checkpoints</b></summary>
 
 **Chain patching:** Compact boundaries record `headUuid`/`anchorUuid`/`tailUuid`. The session loader patches the message chain at read time. Nothing is destructively edited on disk.
 
